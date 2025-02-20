@@ -1,8 +1,6 @@
-local src_path = love.filesystem.getSource()
-
 local ffi = require("ffi")
-
 ffi.cdef([[
+
 
 typedef struct
 {
@@ -533,6 +531,7 @@ uint32_t sv_get_ticks_per_second( void );
 const char* sv_get_log( int size );
 
 ]])
+local src_path = love.filesystem.getSource()
 
 local sv = ffi.load(src_path .. "/lib/sunvox.so")
 
